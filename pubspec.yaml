@@ -27,7 +27,7 @@ dependencies:
   path_provider: ^1.1.2
   gbera_framework:
     path: ./gbera_framework
-
+  font_awesome_flutter: ^8.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

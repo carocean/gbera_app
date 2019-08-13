@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:gbera_app/src/login_display.dart';
 import 'package:gbera_framework/framework.dart';
 
-import 'package:gbera_app/src/backdrop_display.dart';
+import 'package:gbera_app/src/desktop_display.dart';
 
 import 'src/error_display.dart';
 
@@ -31,7 +31,7 @@ void main() async {
                   context: context,
                   title: 'xxxx',
                 ),
-            'backdrop_display': (context) => BackdropDisplay(
+            'desktop_display': (context) => DesktopDisplay(
                   context: context,
                   title: 'yyyy',
                 ),
