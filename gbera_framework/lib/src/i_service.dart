@@ -47,8 +47,8 @@ mixin IAppInstaller {
 
 mixin IDisplayContainer {
   DisplayGetter getDisplayGetter(PageInfo pageInfo);
-
-  void addBinder(String theme, displays);
+  DisplayGetter getDisplayGetterByPagePath(String path);
+  void addBinder(String portal, displays);
 }
 mixin IPortal {
   MicroPortalInfo getInfo();

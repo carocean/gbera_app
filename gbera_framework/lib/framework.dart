@@ -86,12 +86,16 @@ class Framework implements IServiceProvider {
     if('@remoteMicroappToken'==name){
       return _remoteMicroappToken;
     }
+    if(name.startsWith('@display->')){
+      var path=name.substring('@display->'.length,name.length);
+      return _displayContainer.getDisplayGetterByPagePath(path);
+    }
     return _parent ?? _parent.getService(name);
   }
 
   void portalBinder({String portal, DisplayBinder displays}) {
     if (portal.indexOf("/") < 0) {
-      throw '微主题未带版本号，表示为：myportal/1.0';
+      throw '微框架未带版本号，表示为：myportal/1.0';
     }
 
     _displayContainer.addBinder(portal, displays);

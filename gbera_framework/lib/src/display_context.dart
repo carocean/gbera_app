@@ -47,6 +47,14 @@ class DisplayContext {
   void forward(String pagePath, {Object arguments}) {
     Navigator.pushNamed(_context, pagePath, arguments: arguments);
   }
+  ///将一个页作为显示器部件获取实例。注：传入该部件时以当前上下文作为该部件页的上下文，任何一个页即查代表一个显示器也可代表一个显示器中的部件件
+  Widget displayPart(String pagePath) {
+    var displayGetter = site.getService("@display->$pagePath");
+    if(displayGetter==null){
+      throw '404 页地址没有对应的显示器:$pagePath';
+    }
+    return displayGetter(this);
+  }
 
   call(
     String methodName, {

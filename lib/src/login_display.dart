@@ -189,7 +189,7 @@ class LoginAction {
   }
 
   void forwardOK(data) {
-    context.forward("gbera://home.page");
+    context.forward("gbera://portal.page");
   }
 
   void forwardError(e) {

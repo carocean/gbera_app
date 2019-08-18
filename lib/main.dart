@@ -1,5 +1,6 @@
 library gbera;
 
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gbera_app/src/login_display.dart';
 import 'package:gbera_framework/framework.dart';
@@ -7,15 +8,16 @@ import 'package:gbera_framework/framework.dart';
 import 'package:gbera_app/src/desktop_display.dart';
 
 import 'src/error_display.dart';
+import 'src/portal_display.dart';
 
 //flutter中的dart不支持动态反射实例化类型
 //面向微框架开发，向framework注册微框架
 
 void main() async {
-
+//  debugPaintSizeEnabled=true;
   await Framework(
     isEmptySystemDir: true,
-    remoteMicroappHost: 'http://localhost:6700/openport',
+    remoteMicroappHost: 'http://192.168.1.181:6700/openport',
     remoteMicroappToken: 'xxxx',
     errorPage: DefaultErrorPage(),
     bindPortals: (framework) {
@@ -25,11 +27,14 @@ void main() async {
           //懒构造显示器的函数参数：在此传入当前app,主题,及显示器，因此得弄个displayContext让开发者传入其自定义的显示器构造
           return {
             'error_display': (context) => ErrorDispaly(
-              context: context,
-            ),
+                  context: context,
+                ),
             'login_display': (context) => LoginDisplay(
                   context: context,
                   title: 'xxxx',
+                ),
+            'portal_display': (context) => PortalDisplay(
+                  context: context,
                 ),
             'desktop_display': (context) => DesktopDisplay(
                   context: context,

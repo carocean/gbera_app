@@ -11,7 +11,17 @@ class DisplayContainer implements IDisplayContainer {
     this._binders = Map();
     this._displayGetters = Map();
   }
-
+  @override
+  getDisplayGetterByPagePath(String path){
+    var _systemDir=parent.getService('@systemDir');
+    PageInfo pageInfo = _systemDir.getPageInfo(
+      pagePath:path,
+    );
+    if (pageInfo == null) {
+      throw '404 未发现页';
+    }
+    return getDisplayGetter(pageInfo);
+  }
   @override
   getDisplayGetter(PageInfo pageInfo) {
     String portal = pageInfo.portal;
@@ -42,8 +52,8 @@ class DisplayContainer implements IDisplayContainer {
   }
 
   @override
-  void addBinder(String theme, displays) {
-    _binders[theme] = displays;
+  void addBinder(String portal, displays) {
+    _binders[portal] = displays;
   }
 
 
