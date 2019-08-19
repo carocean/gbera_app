@@ -31,12 +31,16 @@ class _GberaBottomNavigationBarState extends State<GberaBottomNavigationBar> {
           icon: Icon(Icons.add_location),
         ),
         BottomNavigationBarItem(
+          title: Text('看看'),
+          icon: Icon(Icons.device_hub),
+        ),
+        BottomNavigationBarItem(
           title: Text('服务'),
           icon: Icon(Icons.business_center),
         ),
       ],
       currentIndex: widget.selectedIndex,
-      type: BottomNavigationBarType.shifting,
+      type: BottomNavigationBarType.fixed,
       unselectedItemColor: Colors.black26,
       selectedItemColor: Colors.red,
       showUnselectedLabels: true,

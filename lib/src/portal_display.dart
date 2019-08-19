@@ -27,6 +27,7 @@ class _PortalDisplayState extends State<PortalDisplay> {
     parts.add(Text('b'));
     parts.add(Text('c'));
     parts.add(Text('d'));
+    parts.add(Text('e'));
     super.initState();
   }
 
