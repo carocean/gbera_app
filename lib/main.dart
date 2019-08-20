@@ -3,12 +3,13 @@ library gbera;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gbera_app/src/login_display.dart';
+import 'package:gbera_app/src/portal/parts/netflow_display.dart';
 import 'package:gbera_framework/framework.dart';
 
-import 'package:gbera_app/src/desktop_display.dart';
+import 'package:gbera_app/src/portal/parts/desktop_display.dart';
 
 import 'src/error_display.dart';
-import 'src/portal_display.dart';
+import 'src/portal/portal_display.dart';
 
 //flutter中的dart不支持动态反射实例化类型
 //面向微框架开发，向framework注册微框架
@@ -38,8 +39,10 @@ void main() async {
                 ),
             'desktop_display': (context) => DesktopDisplay(
                   context: context,
-                  title: 'yyyy',
                 ),
+            'netflow_display': (context) => NetflowDisplay(
+              context: context,
+            ),
           };
         },
       );

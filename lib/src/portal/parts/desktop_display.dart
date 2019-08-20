@@ -3,18 +3,14 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gbera_app/src/widgets/bottom.dart';
-import 'package:gbera_app/src/widgets/card.dart';
+import 'package:gbera_app/src/portal/widgets/cards.dart';
 import 'package:gbera_framework/framework.dart';
 import 'package:intl/intl.dart';
 
-import 'portal_display.dart';
-
 class DesktopDisplay extends StatefulWidget {
-  DesktopDisplay({Key key, this.title, this.context}) : super(key: key);
+  DesktopDisplay({Key key, this.context}) : super(key: key);
 
   final DisplayContext context;
-  final String title; //应用的标题，不是android任务栏状态时的标题
 
   @override
   _DesktopDisplayState createState() => _DesktopDisplayState();
@@ -23,69 +19,102 @@ class DesktopDisplay extends StatefulWidget {
 class _DesktopDisplayState extends State<DesktopDisplay> {
   @override
   Widget build(BuildContext context) {
-
-    return CustomScrollView(
+    return SafeArea(
+      child: CustomScrollView(
         slivers: <Widget>[
-          SliverToBoxAdapter(
-            child: Column(
-              children: <Widget>[
-                ListTile(
-                  title: Text('carocean'),
-                  subtitle: Text('我回家吃了饭'),
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'http://pic-bucket.ws.126.net/photo/0001/2019-08-13/EMENLA1600AN0001NOS.jpg'),
-                  ),
-                ),
-                Center(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('12'),
-                              Text('零钱'),
-                            ],
-                          ),
-                        ),
-                        VerticalDivider(
-                          width: 1,
-                          color: Colors.red,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('2383.0303883'),
-                              Text('帑银资产'),
-                            ],
-                          ),
-                        ),
-                        VerticalDivider(
-                          width: 1,
-                          color: Colors.red,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text('8892.884732'),
-                              Text('纹银资产'),
-                            ],
-                          ),
-                        ),
-                      ],
+          SliverAppBar(
+            pinned: true,
+            expandedHeight: 210,
+            floating: false,
+            title: Text(widget.context.appInfo().title),
+            titleSpacing: 10,
+            centerTitle: false,
+            automaticallyImplyLeading: false,
+            elevation: 0,
+            actions: <Widget>[
+              IconButton(
+                // Use the FontAwesomeIcons class for the IconData
+                icon: new Icon(Icons.crop_free),
+                onPressed: () {
+                  print("Pressed");
+                },
+              ),
+              IconButton(
+                // Use the FontAwesomeIcons class for the IconData
+                icon: new Icon(Icons.apps),
+                onPressed: () {
+                  print("Pressed");
+                },
+              ),
+            ],
+            flexibleSpace: FlexibleSpaceBar(
+              collapseMode: CollapseMode.parallax,
+              background: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 50),
+                    child: ListTile(
+                      title: Text('carocean'),
+                      subtitle: Text('我回家吃了饭'),
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            'http://pic-bucket.ws.126.net/photo/0001/2019-08-13/EMENLA1600AN0001NOS.jpg'),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, right: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text('12'),
+                                Text('零钱'),
+                              ],
+                            ),
+                          ),
+                          VerticalDivider(
+                            width: 1,
+                            color: Colors.red,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, right: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text('2383.0303883'),
+                                Text('帑银资产'),
+                              ],
+                            ),
+                          ),
+                          VerticalDivider(
+                            width: 1,
+                            color: Colors.red,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10, right: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text('8892.884732'),
+                                Text('纹银资产'),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                ],
+              ),
             ),
           ),
           SliverToBoxAdapter(
@@ -329,7 +358,8 @@ class _DesktopDisplayState extends State<DesktopDisplay> {
             ),
           ),
         ],
-      );
+      ),
+    );
   }
 
   _buildCards(BuildContext context) {}
