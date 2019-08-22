@@ -52,9 +52,13 @@ class _DesktopDisplayState extends State<DesktopDisplay> {
               background: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(top: 50),
+                    padding: EdgeInsets.only(
+                      left: 0,
+                      top: 50,
+                    ),
                     child: ListTile(
                       title: Text('carocean'),
                       subtitle: Text('我回家吃了饭'),
@@ -112,7 +116,6 @@ class _DesktopDisplayState extends State<DesktopDisplay> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

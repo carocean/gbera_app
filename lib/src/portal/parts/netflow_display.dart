@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gbera_app/src/portal/widgets/headers.dart';
 import 'package:gbera_framework/framework.dart';
 
 class NetflowDisplay extends StatefulWidget {
@@ -11,9 +12,17 @@ class NetflowDisplay extends StatefulWidget {
   _NetflowDisplayState createState() => _NetflowDisplayState();
 }
 
-class _NetflowDisplayState extends State<NetflowDisplay> {
+class _NetflowDisplayState extends State<NetflowDisplay>
+    with SingleTickerProviderStateMixin {
+  int selectTabIndex;
+
+  _NetflowDisplayState(){
+    selectTabIndex=0;
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: CustomScrollView(
         slivers: <Widget>[
@@ -23,16 +32,11 @@ class _NetflowDisplayState extends State<NetflowDisplay> {
             floating: false,
             automaticallyImplyLeading: false,
             elevation: 0,
-            flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.pin,
-              background: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('..............'),
-                ],
-              ),
-            ),
+            title: getNetflowHeader(selectTabIndex: selectTabIndex,onTap: (index){
+              setState(() {
+                selectTabIndex=index;
+              });
+            }),
           ),
         ],
       ),

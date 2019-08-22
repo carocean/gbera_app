@@ -144,6 +144,9 @@ class LoginAction {
       account = user.substring(0, pos);
       tenant = user.substring(pos + 1, user.length);
     }
+    if(tenant==null||tenant==''){
+      tenant='netos.nettest';
+    }
     if ((user.length == 11 || user.length == 12) &&
         (user.startsWith("1") || user.startsWith("01"))) {
       context.call(
