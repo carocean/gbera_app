@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
@@ -13,8 +15,8 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           padding: EdgeInsets.only(
             left: 25,
             right: 25,
-            top: 4,
-            bottom: 6,
+            top: 3,
+            bottom: Platform.isAndroid ? 5 : 3,
           ),
           decoration: BoxDecoration(
             border: Border(
@@ -43,8 +45,8 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           padding: EdgeInsets.only(
             left: 25,
             right: 25,
-            top: 4,
-            bottom: 6,
+            top: 3,
+            bottom: Platform.isAndroid ? 5 : 3,
           ),
           decoration: BoxDecoration(
             border: Border(
