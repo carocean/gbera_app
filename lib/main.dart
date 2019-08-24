@@ -15,7 +15,7 @@ import 'src/portal/portal_display.dart';
 //面向微框架开发，向framework注册微框架
 
 void main() async {
-//  debugPaintSizeEnabled=true;
+  debugPaintSizeEnabled=true;
   await Framework(
     isEmptySystemDir: true,
     remoteMicroappHost: 'http://192.168.1.181:6700/openport',
