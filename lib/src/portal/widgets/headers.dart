@@ -31,7 +31,7 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           child: Text(
             '管道',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
               color: selectTabIndex == 0 ? Colors.white : Colors.blue,
             ),
           ),
@@ -61,7 +61,7 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           child: Text(
             '平面',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
               color: selectTabIndex == 1 ? Colors.white : Colors.blue,
             ),
           ),
