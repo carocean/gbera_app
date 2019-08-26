@@ -1,28 +1,26 @@
 library framework;
 
-import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gbera_framework/src/netos_app.dart';
-import 'package:path_provider/path_provider.dart';
+
 import 'src/app_installer.dart';
+import 'src/display_container.dart';
 import 'src/display_context.dart';
 import 'src/error_page.dart';
 import 'src/i_service.dart';
+import 'src/netos_app.dart';
 import 'src/system_dir.dart';
-import 'src/display_container.dart';
-import 'package:gbera_framework/util.dart';
-
 import 'src/theme_data.dart';
+import 'util.dart';
 
-export 'util.dart';
 export 'src/display_context.dart';
-export 'src/i_service.dart';
 export 'src/error_page.dart';
+export 'src/i_service.dart';
+export 'util.dart';
 
 class Framework implements IServiceProvider {
   IAppInstaller _installer;

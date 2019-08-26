@@ -25,8 +25,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   dio: 2.1.12
   path_provider: ^1.1.2
-  gbera_framework:
-    path: ./gbera_framework
+  netos_framework:
+    path: ./netos_framework
   font_awesome_flutter: ^8.5.0
   charts_flutter: ^0.6.0
 

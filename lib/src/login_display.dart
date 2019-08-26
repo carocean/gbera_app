@@ -1,7 +1,7 @@
 //以下主页应放到主程序中实现并向framework注册s
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gbera_framework/framework.dart';
+import 'package:netos_framework/framework.dart';
 
 class LoginDisplay extends StatefulWidget {
   LoginDisplay({Key key, this.title, this.context}) : super(key: key);

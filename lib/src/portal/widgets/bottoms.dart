@@ -30,10 +30,10 @@ class _GberaBottomNavigationBarState extends State<GberaBottomNavigationBar> {
           title: Text('地圈'),
           icon: Icon(Icons.add_location),
         ),
-        BottomNavigationBarItem(
-          title: Text('追链'),
-          icon: Icon(Icons.device_hub),
-        ),
+//        BottomNavigationBarItem(
+//          title: Text('追链'),
+//          icon: Icon(Icons.device_hub),
+//        ),
         BottomNavigationBarItem(
           title: Text('服务'),
           icon: Icon(Icons.business_center),

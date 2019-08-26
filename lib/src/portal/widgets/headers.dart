@@ -29,7 +29,7 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           ),
 //        color: selectTabIndex == 0 ? Colors.blue : Colors.white,
           child: Text(
-            '管道',
+            '送达',
             style: TextStyle(
               fontSize: 12,
               color: selectTabIndex == 0 ? Colors.white : Colors.blue,
@@ -59,7 +59,7 @@ getNetflowHeader({int selectTabIndex, void Function(int tabindex) onTap}) {
           ),
 //        color: selectTabIndex == 1 ? Colors.blue : Colors.white,
           child: Text(
-            '平面',
+            '追链',
             style: TextStyle(
               fontSize: 12,
               color: selectTabIndex == 1 ? Colors.white : Colors.blue,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gbera_framework/framework.dart';
 
+import '../framework.dart';
 import 'error_page.dart';
 
 class NetosApp extends StatefulWidget implements IServiceProvider {

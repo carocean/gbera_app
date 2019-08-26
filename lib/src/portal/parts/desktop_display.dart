@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gbera_app/src/portal/widgets/cards.dart';
-import 'package:gbera_framework/framework.dart';
 import 'package:intl/intl.dart';
+import 'package:netos_framework/framework.dart';
 
 class DesktopDisplay extends StatefulWidget {
   DesktopDisplay({Key key, this.context}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gbera_framework/framework.dart';
+import 'package:netos_framework/framework.dart';
 
 class ErrorDispaly extends StatelessWidget {
 

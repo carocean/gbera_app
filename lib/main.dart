@@ -1,12 +1,10 @@
 library gbera;
 
 import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gbera_app/src/login_display.dart';
-import 'package:gbera_app/src/portal/parts/netflow_display.dart';
-import 'package:gbera_framework/framework.dart';
-
 import 'package:gbera_app/src/portal/parts/desktop_display.dart';
+import 'package:gbera_app/src/portal/parts/netflow_display.dart';
+import 'package:netos_framework/framework.dart';
 
 import 'src/error_display.dart';
 import 'src/portal/portal_display.dart';
@@ -15,7 +13,6 @@ import 'src/portal/portal_display.dart';
 //面向微框架开发，向framework注册微框架
 
 void main() async {
-  debugPaintSizeEnabled=true;
   await Framework(
     isEmptySystemDir: true,
     remoteMicroappHost: 'http://192.168.1.181:6700/openport',
