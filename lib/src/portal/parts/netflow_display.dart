@@ -61,7 +61,6 @@ void _buildPipelineTab(List<Widget> panel) {
         '管道',
         style: TextStyle(
           fontSize: 24,
-          fontWeight: FontWeight.bold,
           color: Colors.black,
         ),
       ),
@@ -269,7 +268,6 @@ void _buildPlatTab(List<Widget> panel) {
             '信息',
             style: TextStyle(
               fontSize: 24,
-              fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
@@ -309,12 +307,14 @@ void _buildPlatTab(List<Widget> panel) {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(top: 5, right: 5),
-                child: Image(
-                  image: NetworkImage(
-                      'https://sjbz-fd.zol-img.com.cn/t_s208x312c5/g5/M00/01/06/ChMkJ1w3FnmIE9dUAADdYQl3C5IAAuTxAKv7x8AAN15869.jpg'),
-                  height: 35,
-                  width: 35,
-                  fit: BoxFit.fill,
+                child: ClipOval(
+                  child: Image(
+                    image: NetworkImage(
+                        'https://sjbz-fd.zol-img.com.cn/t_s208x312c5/g5/M00/01/06/ChMkJ1w3FnmIE9dUAADdYQl3C5IAAuTxAKv7x8AAN15869.jpg'),
+                    height: 35,
+                    width: 35,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
               Expanded(
@@ -346,6 +346,10 @@ void _buildPlatTab(List<Widget> panel) {
                       alignment: Alignment.topLeft,
                       child: Text(
                           '不走形式，研发中心月度实现目标，由上级主管给出几个目标维度，被考核人自已填本月实际目标，并由主管审核下级目标，最终呈给人事部。工作态度：考核项固定'),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[],
                     ),
                   ],
                 ),

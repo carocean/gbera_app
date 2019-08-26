@@ -15,7 +15,7 @@ import 'src/portal/portal_display.dart';
 void main() async {
   await Framework(
     isEmptySystemDir: true,
-    remoteMicroappHost: 'http://192.168.1.181:6700/openport',
+    remoteMicroappHost: 'http://192.168.1.182:6700/openport',
     remoteMicroappToken: 'xxxx',
     errorPage: DefaultErrorPage(),
     bindPortals: (framework) {
