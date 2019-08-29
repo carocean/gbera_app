@@ -507,52 +507,57 @@ Widget _pipelineContentItemBuilder(BuildContext context, int index) {
     ),
     child: Column(
       children: <Widget>[
-        ListTile(
-          leading: IconButton(
-            icon: Image(
-              image: NetworkImage(
-                  'http://pic-bucket.ws.126.net/photo/0003/2019-08-24/ENB27CUI00AJ0003NOS.jpg'),
-            ),
-          ),
-          trailing: Padding(
-            padding: EdgeInsets.only(
-              top: 0,
-              bottom: 20,
-            ),
-            child: Text('23:55'),
-          ),
-          subtitle: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                '[39/120]',
-                style: TextStyle(fontSize: 12),
+        GestureDetector(
+          onTap: () {
+            print('xxxxxx');
+          },
+          child: ListTile(
+            leading: IconButton(
+              icon: Image(
+                image: NetworkImage(
+                    'http://pic-bucket.ws.126.net/photo/0003/2019-08-24/ENB27CUI00AJ0003NOS.jpg'),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 5, right: 1),
-                child: Text(
-                  '天空的鸟',
-                  style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
-                ),
+            ),
+            trailing: Padding(
+              padding: EdgeInsets.only(
+                top: 0,
+                bottom: 20,
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 1, right: 5),
-                child: Text(
-                  '说:',
+              child: Text('23:55'),
+            ),
+            subtitle: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  '[39/120]',
                   style: TextStyle(fontSize: 12),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: Text(
-                  '什么时候回来',
-                  style: TextStyle(fontSize: 12),
-                  overflow: TextOverflow.ellipsis,
+                Padding(
+                  padding: EdgeInsets.only(left: 5, right: 1),
+                  child: Text(
+                    '天空的鸟',
+                    style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12),
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.only(left: 1, right: 5),
+                  child: Text(
+                    '说:',
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Text(
+                    '什么时候回来',
+                    style: TextStyle(fontSize: 12),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
+            title: Text('bill li $index'),
           ),
-          title: Text('bill li $index'),
         ),
         Divider(
           height: 1,

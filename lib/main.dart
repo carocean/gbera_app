@@ -3,10 +3,12 @@ library gbera;
 import 'package:flutter/rendering.dart';
 import 'package:gbera_app/src/login_display.dart';
 import 'package:gbera_app/src/portal/parts/desktop_display.dart';
+import 'package:gbera_app/src/portal/parts/geosphere_display.dart';
 import 'package:gbera_app/src/portal/parts/netflow_display.dart';
 import 'package:netos_framework/framework.dart';
 
 import 'src/error_display.dart';
+import 'src/portal/parts/market_display.dart';
 import 'src/portal/portal_display.dart';
 
 //flutter中的dart不支持动态反射实例化类型
@@ -15,7 +17,7 @@ import 'src/portal/portal_display.dart';
 void main() async {
   await Framework(
     isEmptySystemDir: true,
-    remoteMicroappHost: 'http://192.168.1.182:6700/openport',
+    remoteMicroappHost: 'http://localhost:6700/openport',
     remoteMicroappToken: 'xxxx',
     errorPage: DefaultErrorPage(),
     bindPortals: (framework) {
@@ -38,8 +40,14 @@ void main() async {
                   context: context,
                 ),
             'netflow_display': (context) => NetflowDisplay(
-              context: context,
-            ),
+                  context: context,
+                ),
+            'market_display': (context) => MarketDisplay(
+                  context: context,
+                ),
+            'geosphere_display': (context) => GeosphereDisplay(
+                  context: context,
+                ),
           };
         },
       );

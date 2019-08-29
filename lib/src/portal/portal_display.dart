@@ -22,10 +22,8 @@ class _PortalDisplayState extends State<PortalDisplay> {
     super.initState();
     parts.add(widget.context.displayPart('gbera://desktop.page'));
     parts.add(widget.context.displayPart('gbera://netflow.page'));
-    parts.add(Text('c'));
-    parts.add(Text('d'));
-    parts.add(Text('e'));
-
+    parts.add(widget.context.displayPart('gbera://geosphere.page'));
+    parts.add(widget.context.displayPart('gbera://market.page'));
   }
 
   @override
