@@ -12,6 +12,7 @@ class GeosphereDisplay extends StatefulWidget {
 class _GeosphereDisplayState extends State<GeosphereDisplay> {
   @override
   Widget build(BuildContext context) {
+    //SliverPersistentHeaderDelegate 滑动可折叠头
     List<Widget> panel = [
 
     ];

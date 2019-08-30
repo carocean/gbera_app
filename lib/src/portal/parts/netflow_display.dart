@@ -561,6 +561,7 @@ Widget _pipelineContentItemBuilder(BuildContext context, int index) {
         ),
         Divider(
           height: 1,
+          indent: 80,
         ),
       ],
     ),
